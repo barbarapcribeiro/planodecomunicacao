@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template de Plano de Comunicação - Change Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        
+        .section-title {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .stakeholder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stakeholder-card {
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+        }
+        
+        .stakeholder-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-container {
+            margin-top: 20px;
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 1fr 150px 100px;
+            gap: 15px;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        
+        .add-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        
+        .add-btn:hover {
+            background: #2980b9;
+        }
+        
+        .remove-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        
+        .remove-btn:hover {
+            background: #c0392b;
+        }
+        
+        .channel-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .channel-tag {
+            background: #3498db;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .metric-card {
+            padding: 20px;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .metric-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: #2ecc71;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: #27ae60;
+        }
+        
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+        
+        .help-text {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
+        .priority-select {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .priority-high {
+            background: #fee;
+            border-color: #e74c3c;
+        }
+        
+        .priority-medium {
+            background: #fff3cd;
+            border-color: #f39c12;
+        }
+        
+        .priority-low {
+            background: #e8f5e9;
+            border-color: #27ae60;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .add-btn,
+            .remove-btn,
+            .action-buttons {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📢 Plano de Comunicação - Change Management</h1>
+        <p class="subtitle">Template completo para estruturar a comunicação da sua mudança organizacional</p>
+        
+        <!-- Seção 1: Contexto da Mudança -->
+        <div class="section">
+            <h2 class="section-title">
+                <span>🎯</span> 1. Contexto da Mudança
+            </h2>
+            
+            <div class="form-group">
+                <label for="project-name">Nome do Projeto/Mudança:</label>
+                <input type="text" id="project-name" placeholder="Ex: Implementação do novo ERP">
+            </div>
+            
+            <div class="form-group">
+                <label for="change-description">Descrição da Mudança:</label>
+                <textarea id="change-description" placeholder="Descreva brevemente a mudança, seu propósito e principais impactos"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="key-messages">Mensagens-Chave (O que queremos que todos saibam):</label>
+                <textarea id="key-messages" placeholder="Liste as 3-5 mensagens principais que devem ser consistentemente comunicadas"></textarea>
+                <p class="help-text">Dica: Foque no "porquê" da mudança, benefícios e o que não muda</p>
+            </div>
+        </div>
+        
+        <!-- Seção 2: Análise de Stakeholders -->
+        <div class="section">
+            <h2 class="section-title">
+                <span>👥</span> 2. Mapeamento de Stakeholders
+            </h2>
+            
+            <div class="stakeholder-grid">
+                <div class="stakeholder-card">
+                    <h4>🎖️ Alta Liderança</h4>
+                    <div class="form-group">
+                        <label>Principais Concerns:</label>
+                        <textarea placeholder="Ex: ROI, prazo, riscos estratégicos"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Canais Preferidos:</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="exec-email">
+                                <label for="exec-email">E-mail Executivo</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="exec-meeting">
+                                <label for="exec-meeting">Reuniões</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="exec-report">
+                                <label for="exec-report">Relatórios</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stakeholder-card">
+                    <h4>👔 Gestores</h4>
+                    <div class="form-group">
+                        <label>Principais Concerns:</label>
+                        <textarea placeholder="Ex: Impacto na equipe, produtividade, processos"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Canais Preferidos:</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mgr-workshop">
+                                <label for="mgr-workshop">Workshops</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mgr-toolkit">
+                                <label for="mgr-toolkit">Toolkits</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mgr-call">
+                                <label for="mgr-call">Calls</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stakeholder-card">
+                    <h4>👨‍💼 Colaboradores</h4>
+                    <div class="form-group">
+                        <label>Principais Concerns:</label>
+                        <textarea placeholder="Ex: Segurança no emprego, novas habilidades, rotina"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Canais Preferidos:</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="emp-intranet">
+                                <label for="emp-intranet">Intranet</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="emp-video">
+                                <label for="emp-video">Vídeos</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="emp-townhall">
+                                <label for="emp-townhall">Town Halls</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group" style="margin-top: 20px;">
+                <label for="other-stakeholders">Outros Stakeholders Importantes:</label>
+                <textarea id="other-stakeholders" placeholder="Ex: Clientes, fornecedores, sindicato, etc."></textarea>
+            </div>
+        </div>
+        
+        <!-- Seção 3: Estratégia de Canais -->
+        <div class="section">
+            <h2 class="section-title">
+                <span>📡</span> 3. Estratégia de Canais
+            </h2>
+            
+            <div class="form-group">
+                <label>Canais de Comunicação Disponíveis:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="ch-email">
+                        <label for="ch-email">📧 E-mail</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="ch-intranet">
+                        <label for="ch-intranet">🌐 Intranet</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="ch-teams">
+                        <label for="ch-teams">💬 Teams/Slack</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="ch-video">
+                        <label for="ch-video">🎥 Vídeo</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="ch-presencial">
+                        <label for="ch-presencial">🤝 Presencial</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="ch-whatsapp">
+                        <label for="ch-whatsapp">📱 WhatsApp</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="ch-newsletter">
+                        <label for="ch-newsletter">📰 Newsletter</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="ch-podcast">
+                        <label for="ch-podcast">🎙️ Podcast</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="two-way-channels">Canais de Comunicação Bidirecional (Feedback):</label>
+                <textarea id="two-way-channels" placeholder="Ex: Caixa de sugestões, pesquisas, sessões de Q&A, focus groups"></textarea>
+            </div>
+        </div>
+        
+        <!-- Seção 4: Timeline de Comunicação -->
+        <div class="section">
+            <h2 class="section-title">
+                <span>📅</span> 4. Timeline de Comunicação
+            </h2>
+            
+            <div class="timeline-container" id="timeline-container">
+                <div class="timeline-item">
+                    <input type="date" placeholder="Data">
+                    <input type="text" placeholder="Ação de comunicação">
+                    <input type="text" placeholder="Público-alvo">
+                    <select class="priority-select">
+                        <option value="high">Alta</option>
+                        <option value="medium">Média</option>
+                        <option value="low">Baixa</option>
+                    </select>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addTimelineItem()">+ Adicionar Ação</button>
+        </div>
+        
+        <!-- Seção 5: Gestão de Resistências -->
+        <div class="section">
+            <h2 class="section-title">
+                <span>🛡️</span> 5. Gestão de Resistências e Comunicação de Crise
+            </h2>
+            
+            <div class="form-group">
+                <label for="resistance-points">Principais Pontos de Resistência Esperados:</label>
+                <textarea id="resistance-points" placeholder="Ex: Medo de demissões, complexidade da nova ferramenta, mudança de rotina"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="resistance-strategy">Estratégia de Comunicação para Resistências:</label>
+                <textarea id="resistance-strategy" placeholder="Como vamos abordar cada ponto de resistência na comunicação"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="crisis-protocol">Protocolo de Comunicação de Crise:</label>
+                <textarea id="crisis-protocol" placeholder="Quem comunica o quê em caso de problemas graves"></textarea>
+            </div>
+        </div>
+        
+        <!-- Seção 6: Métricas e Monitoramento -->
+        <div class="section">
+            <h2 class="section-title">
+                <span>📊</span> 6. Métricas e Monitoramento
+            </h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">📈</div>
+                    <h4>Alcance</h4>
+                    <input type="text" placeholder="Ex: % de abertura de emails">
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">💬</div>
+                    <h4>Engajamento</h4>
+                    <input type="text" placeholder="Ex: Participação em sessões">
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🎯</div>
+                    <h4>Compreensão</h4>
+                    <input type="text" placeholder="Ex: Quiz scores">
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">😊</div>
+                    <h4>Sentimento</h4>
+                    <input type="text" placeholder="Ex: Pulse surveys">
+                </div>
+            </div>
+            
+            <div class="form-group" style="margin-top: 20px;">
+                <label for="feedback-frequency">Frequência de Coleta de Feedback:</label>
+                <select id="feedback-frequency">
+                    <option>Semanal</option>
+                    <option>Quinzenal</option>
+                    <option>Mensal</option>
+                    <option>Por fase do projeto</option>
+                </select>
+            </div>
+        </div>
+        
+        <!-- Seção 7: Papéis e Responsabilidades -->
+        <div class="section">
+            <h2 class="section-title">
+                <span>🎭</span> 7. Papéis e Responsabilidades
+            </h2>
+            
+            <div class="form-group">
+                <label for="sponsor-role">Sponsor/Patrocinador:</label>
+                <input type="text" placeholder="Nome e o que comunica">
+            </div>
+            
+            <div class="form-group">
+                <label for="change-team">Time de Change:</label>
+                <textarea placeholder="Quem faz o quê na comunicação"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="champions">Champions/Embaixadores:</label>
+                <textarea placeholder="Como serão envolvidos na comunicação"></textarea>
+            </div>
+        </div>
+        
+        <!-- Botões de Ação -->
+        <div class="action-buttons">
+            <button class="btn-primary" onclick="saveTemplate()">💾 Salvar Plano</button>
+            <button class="btn-secondary" onclick="exportTemplate()">📄 Exportar PDF</button>
+            <button class="btn-secondary" onclick="clearTemplate()">🔄 Limpar Formulário</button>
+        </div>
+    </div>
+    
+    <script>
+        // Adicionar item na timeline
+        function addTimelineItem() {
+            const container = document.getElementById('timeline-container');
+            const newItem = document.createElement('div');
+            newItem.className = 'timeline-item';
+            newItem.innerHTML = `
+                <input type="date" placeholder="Data">
+                <input type="text" placeholder="Ação de comunicação">
+                <input type="text" placeholder="Público-alvo">
+                <select class="priority-select" onchange="updatePriority(this)">
+                    <option value="high">Alta</option>
+                    <option value="medium">Média</option>
+                    <option value="low">Baixa</option>
+                </select>
+                <button class="remove-btn" onclick="removeTimelineItem(this)">Remover</button>
+            `;
+            container.appendChild(newItem);
+        }
+        
+        // Remover item da timeline
+        function removeTimelineItem(button) {
+            button.parentElement.remove();
+        }
+        
+        // Atualizar cor da prioridade
+        function updatePriority(select) {
+            select.className = 'priority-select priority-' + select.value;
+        }
+        
+        // Salvar template (localStorage)
+        function saveTemplate() {
+            const data = {
+                projectName: document.getElementById('project-name').value,
+                changeDescription: document.getElementById('change-description').value,
+                keyMessages: document.getElementById('key-messages').value,
+                // ... coletar todos os outros campos
+                savedDate: new Date().toISOString()
+            };
+            
+            localStorage.setItem('communicationPlan', JSON.stringify(data));
+            alert('✅ Plano salvo com sucesso!');
+        }
+        
+        // Exportar para PDF (simulação)
+        function exportTemplate() {
+            window.print();
+        }
+        
+        // Limpar formulário
+        function clearTemplate() {
+            if (confirm('Tem certeza que deseja limpar todo o formulário?')) {
+                document.querySelectorAll('input[type="text"], textarea').forEach(field => {
+                    field.value = '';
+                });
+                document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+            }
+        }
+        
+        // Carregar dados salvos ao iniciar
+        window.onload = function() {
+            const savedData = localStorage.getItem('communicationPlan');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                // Preencher campos com dados salvos
+                if (data.projectName) document.getElementById('project-name').value = data.projectName;
+                if (data.changeDescription) document.getElementById('change-description').value = data.changeDescription;
+                if (data.keyMessages) document.getElementById('key-messages').value = data.keyMessages;
+            }
+        }
+        
+        // Auto-save a cada 30 segundos
+        setInterval(function() {
+            const projectName = document.getElementById('project-name').value;
+            if (projectName) {
+                saveTemplate();
+                console.log('Auto-save realizado');
+            }
+        }, 30000);
+    </script>
+</body>
+</html>
